@@ -1,0 +1,90 @@
+Dependencies for Project 'CH563', Target 'CH563': (DO NOT MODIFY !)
+F (..\User\MAIN.C)(0x54D5BE4C)(-c --cpu ARM966E-S -D__MICROLIB -g -O0 --apcs=interwork -I ..\User -I ..\User\App -I ..\User\arm -I ..\..\PUB\ucosii -I ..\..\..\SRC --C99-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\91x-D__UVISION_VERSION="525"-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+I (..\..\..\SRC\CH563SFR.H)(0x5484FA66)
+I (..\..\..\SRC\CH563BAS.H)(0x58521034)
+I (..\..\..\SRC\SYSFREQ.H)(0x52856400)
+I (..\..\PUB\ucosii\includes.h)(0x54D5AE34)
+I (..\User\arm\os_cpu.h)(0x54D5AE50)
+I (..\User\App\os_cfg.h)(0x54D5A454)
+I (..\..\PUB\ucosii\uCOS_II.H)(0x3B21AFDA)
+I (..\User\App\BSP.H)(0x54D5AE7E)
+F (..\..\..\SRC\SYSFREQ.C)(0x52856400)(-c --cpu ARM966E-S -D__MICROLIB -g -O0 --apcs=interwork -I ..\User -I ..\User\App -I ..\User\arm -I ..\..\PUB\ucosii -I ..\..\..\SRC --C99-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\91x-D__UVISION_VERSION="525"-o ..\obj\sysfreq.o --omf_browse ..\obj\sysfreq.crf --depend ..\obj\sysfreq.d)
+I (..\..\..\SRC\CH563SFR.H)(0x5484FA66)
+I (..\..\..\SRC\CH563BAS.H)(0x58521034)
+I (..\..\..\SRC\SYSFREQ.H)(0x52856400)
+F (..\..\..\SRC\STARTUP.S)(0x58C0FA32)(--cpu ARM966E-S -g --apcs=interwork --pd "__MICROLIB SETA 1"-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\91x--pd "__UVISION_VERSION SETA 525"--list .\startup.lst --xref -o ..\obj\startup.o --depend ..\obj\startup.d)
+F (..\..\PUB\ucosii\OS_TIME.C)(0x54D43500)(-c --cpu ARM966E-S -D__MICROLIB -g -O0 --apcs=interwork -I ..\User -I ..\User\App -I ..\User\arm -I ..\..\PUB\ucosii -I ..\..\..\SRC --C99-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\91x-D__UVISION_VERSION="525"-o ..\obj\os_time.o --omf_browse ..\obj\os_time.crf --depend ..\obj\os_time.d)
+I (..\..\PUB\ucosii\includes.h)(0x54D5AE34)
+I (..\User\arm\os_cpu.h)(0x54D5AE50)
+I (..\User\App\os_cfg.h)(0x54D5A454)
+I (..\..\PUB\ucosii\uCOS_II.H)(0x3B21AFDA)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+F (..\..\PUB\ucosii\OS_CORE.C)(0x54D315C6)(-c --cpu ARM966E-S -D__MICROLIB -g -O0 --apcs=interwork -I ..\User -I ..\User\App -I ..\User\arm -I ..\..\PUB\ucosii -I ..\..\..\SRC --C99-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\91x-D__UVISION_VERSION="525"-o ..\obj\os_core.o --omf_browse ..\obj\os_core.crf --depend ..\obj\os_core.d)
+I (..\..\PUB\ucosii\includes.h)(0x54D5AE34)
+I (..\User\arm\os_cpu.h)(0x54D5AE50)
+I (..\User\App\os_cfg.h)(0x54D5A454)
+I (..\..\PUB\ucosii\uCOS_II.H)(0x3B21AFDA)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+F (..\..\PUB\ucosii\OS_FLAG.C)(0x3B21AFDA)(-c --cpu ARM966E-S -D__MICROLIB -g -O0 --apcs=interwork -I ..\User -I ..\User\App -I ..\User\arm -I ..\..\PUB\ucosii -I ..\..\..\SRC --C99-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\91x-D__UVISION_VERSION="525"-o ..\obj\os_flag.o --omf_browse ..\obj\os_flag.crf --depend ..\obj\os_flag.d)
+I (..\..\PUB\ucosii\INCLUDES.H)(0x54D5AE34)
+I (..\User\arm\os_cpu.h)(0x54D5AE50)
+I (..\User\App\os_cfg.h)(0x54D5A454)
+I (..\..\PUB\ucosii\uCOS_II.H)(0x3B21AFDA)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+F (..\..\PUB\ucosii\OS_MBOX.C)(0x3AFCB31E)(-c --cpu ARM966E-S -D__MICROLIB -g -O0 --apcs=interwork -I ..\User -I ..\User\App -I ..\User\arm -I ..\..\PUB\ucosii -I ..\..\..\SRC --C99-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\91x-D__UVISION_VERSION="525"-o ..\obj\os_mbox.o --omf_browse ..\obj\os_mbox.crf --depend ..\obj\os_mbox.d)
+I (..\..\PUB\ucosii\includes.h)(0x54D5AE34)
+I (..\User\arm\os_cpu.h)(0x54D5AE50)
+I (..\User\App\os_cfg.h)(0x54D5A454)
+I (..\..\PUB\ucosii\uCOS_II.H)(0x3B21AFDA)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+F (..\..\PUB\ucosii\OS_MEM.C)(0x3F9BE5A0)(-c --cpu ARM966E-S -D__MICROLIB -g -O0 --apcs=interwork -I ..\User -I ..\User\App -I ..\User\arm -I ..\..\PUB\ucosii -I ..\..\..\SRC --C99-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\91x-D__UVISION_VERSION="525"-o ..\obj\os_mem.o --omf_browse ..\obj\os_mem.crf --depend ..\obj\os_mem.d)
+I (..\..\PUB\ucosii\includes.h)(0x54D5AE34)
+I (..\User\arm\os_cpu.h)(0x54D5AE50)
+I (..\User\App\os_cfg.h)(0x54D5A454)
+I (..\..\PUB\ucosii\uCOS_II.H)(0x3B21AFDA)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+F (..\..\PUB\ucosii\OS_MUTEX.C)(0x3AFCB31E)(-c --cpu ARM966E-S -D__MICROLIB -g -O0 --apcs=interwork -I ..\User -I ..\User\App -I ..\User\arm -I ..\..\PUB\ucosii -I ..\..\..\SRC --C99-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\91x-D__UVISION_VERSION="525"-o ..\obj\os_mutex.o --omf_browse ..\obj\os_mutex.crf --depend ..\obj\os_mutex.d)
+I (..\..\PUB\ucosii\includes.h)(0x54D5AE34)
+I (..\User\arm\os_cpu.h)(0x54D5AE50)
+I (..\User\App\os_cfg.h)(0x54D5A454)
+I (..\..\PUB\ucosii\uCOS_II.H)(0x3B21AFDA)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+F (..\..\PUB\ucosii\OS_Q.C)(0x3F9E8CBA)(-c --cpu ARM966E-S -D__MICROLIB -g -O0 --apcs=interwork -I ..\User -I ..\User\App -I ..\User\arm -I ..\..\PUB\ucosii -I ..\..\..\SRC --C99-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\91x-D__UVISION_VERSION="525"-o ..\obj\os_q.o --omf_browse ..\obj\os_q.crf --depend ..\obj\os_q.d)
+I (..\..\PUB\ucosii\includes.h)(0x54D5AE34)
+I (..\User\arm\os_cpu.h)(0x54D5AE50)
+I (..\User\App\os_cfg.h)(0x54D5A454)
+I (..\..\PUB\ucosii\uCOS_II.H)(0x3B21AFDA)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+F (..\..\PUB\ucosii\OS_SEM.C)(0x3AFCB31E)(-c --cpu ARM966E-S -D__MICROLIB -g -O0 --apcs=interwork -I ..\User -I ..\User\App -I ..\User\arm -I ..\..\PUB\ucosii -I ..\..\..\SRC --C99-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\91x-D__UVISION_VERSION="525"-o ..\obj\os_sem.o --omf_browse ..\obj\os_sem.crf --depend ..\obj\os_sem.d)
+I (..\..\PUB\ucosii\includes.h)(0x54D5AE34)
+I (..\User\arm\os_cpu.h)(0x54D5AE50)
+I (..\User\App\os_cfg.h)(0x54D5A454)
+I (..\..\PUB\ucosii\uCOS_II.H)(0x3B21AFDA)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+F (..\..\PUB\ucosii\OS_TASK.C)(0x3B21AFDA)(-c --cpu ARM966E-S -D__MICROLIB -g -O0 --apcs=interwork -I ..\User -I ..\User\App -I ..\User\arm -I ..\..\PUB\ucosii -I ..\..\..\SRC --C99-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\91x-D__UVISION_VERSION="525"-o ..\obj\os_task.o --omf_browse ..\obj\os_task.crf --depend ..\obj\os_task.d)
+I (..\..\PUB\ucosii\includes.h)(0x54D5AE34)
+I (..\User\arm\os_cpu.h)(0x54D5AE50)
+I (..\User\App\os_cfg.h)(0x54D5A454)
+I (..\..\PUB\ucosii\uCOS_II.H)(0x3B21AFDA)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+F (..\User\arm\Os_cpu_c.c)(0x54D5B088)(-c --cpu ARM966E-S -D__MICROLIB -g -O0 --apcs=interwork -I ..\User -I ..\User\App -I ..\User\arm -I ..\..\PUB\ucosii -I ..\..\..\SRC --C99-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\91x-D__UVISION_VERSION="525"-o ..\obj\os_cpu_c.o --omf_browse ..\obj\os_cpu_c.crf --depend ..\obj\os_cpu_c.d)
+I (..\..\PUB\ucosii\includes.h)(0x54D5AE34)
+I (..\User\arm\os_cpu.h)(0x54D5AE50)
+I (..\User\App\os_cfg.h)(0x54D5A454)
+I (..\..\PUB\ucosii\uCOS_II.H)(0x3B21AFDA)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+F (..\User\arm\Os_cpu_a.s)(0x54D5B168)(--cpu ARM966E-S -g --apcs=interwork --pd "__MICROLIB SETA 1"-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\91x--pd "__UVISION_VERSION SETA 525"--list .\os_cpu_a.lst --xref -o ..\obj\os_cpu_a.o --depend ..\obj\os_cpu_a.d)
+F (..\User\arm\Os_int_a.s)(0x54D5B18A)(--cpu ARM966E-S -g --apcs=interwork --pd "__MICROLIB SETA 1"-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\91x--pd "__UVISION_VERSION SETA 525"--list .\os_int_a.lst --xref -o ..\obj\os_int_a.o --depend ..\obj\os_int_a.d)
+F (..\User\App\bsp.c)(0x54D5BEA2)(-c --cpu ARM966E-S -D__MICROLIB -g -O0 --apcs=interwork -I ..\User -I ..\User\App -I ..\User\arm -I ..\..\PUB\ucosii -I ..\..\..\SRC --C99-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\91x-D__UVISION_VERSION="525"-o ..\obj\bsp.o --omf_browse ..\obj\bsp.crf --depend ..\obj\bsp.d)
+I (..\..\..\SRC\CH563SFR.H)(0x5484FA66)
+I (..\..\..\SRC\CH563BAS.H)(0x58521034)
+I (..\..\..\SRC\SYSFREQ.H)(0x52856400)
+I (..\User\App\BSP.H)(0x54D5AE7E)
+I (..\..\PUB\ucosii\includes.h)(0x54D5AE34)
+I (..\User\arm\os_cpu.h)(0x54D5AE50)
+I (..\User\App\os_cfg.h)(0x54D5A454)
+I (..\..\PUB\ucosii\uCOS_II.H)(0x3B21AFDA)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
