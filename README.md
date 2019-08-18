@@ -14,6 +14,8 @@ CH563 SoC是一款32位100MHz高速单片机MCU，内置百兆以太网MAC和收
 * [参考文档](docs/)
 * [参考资源](src/)
 
+[![sites](SoC/CH563P.jpg)](http://wch.cn/download/CH563DS1_PDF.html)
+
 ### [关联资源](https://github.com/sochub)
 
 * [arm-none-eabi编译器](https://github.com/sochub/arm-none-eabi)
