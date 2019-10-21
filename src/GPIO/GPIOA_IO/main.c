@@ -112,15 +112,13 @@ int main( void )
     Delay_ms(100);                                                              
     LED_OUT_INACT( );
     mInitSTDIO( );                                                              /* 串口0初始化 */
-    PRINT("GPIOA DEMO....\n");                                                  /* 监控程序运行 */
-    R32_PA_PU  |= 0xffffffff;                                                   /* GPIO A 上拉设置,置1表示上拉,置0表示下拉 */  
-    R32_PA_DIR |= 0xffffffff;                                                   /* GPIO A 方向设置为输出 , direction: 0=in, 1=out */
+    PRINT("QITAS GPIO DEMO...\n");                                                  /* 监控程序运行 */
+    R32_PB_PU  |= 0xffffffff;                                                   /* GPIO上拉设置,置1表示上拉,置0表示下拉 */  
+    R32_PB_DIR |= 0xffffffff;                                                   /* GPIO方向设置为输出 , direction: 0=in, 1=out */
     while(1){
-        R32_PA_OUT = 0x00000000;                                                /* GPIO A 输出低电平 */
-        Delay_ms(200);
-        R32_PA_OUT = 0xffffffff;                                                /* GPIO A 输出高电平 */
-        Delay_ms(300);
+        R32_PB_OUT = 0x00000000;                                                /* GPIO 输出低电平 */
+        Delay_ms(500);
+        R32_PB_OUT = 0xffffffff;                                              
+        Delay_ms(500);
     }    
 }
-
-/*********************************** endfile **********************************/
