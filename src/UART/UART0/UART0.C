@@ -25,7 +25,7 @@ UINT8 buf[ 50 ];
 UINT8 rcvbuf[ 50 ];
 
 /* 连接一个LED用于监控演示程序的进度,低电平LED亮 */
-#define LED                     1<<3
+#define LED                     1<<4
 
 #define LED_OUT_INIT(  )     { R32_PB_OUT |= LED; R32_PB_DIR |= LED; }         /* LED 高电平为输出方向 */
 #define LED_OUT_ACT(  )      { R32_PB_CLR |= LED; }                            /* LED 低电平驱动LED显示 */
@@ -95,7 +95,7 @@ void Uart0_Init( UINT32  baud )
 * Return         : None
 *******************************************************************************/
 
-int    fputc( int c, FILE *f )
+int  fputc( int c, FILE *f )
 {
     R8_UART0_THR = c;                                                           /* 发送数据 */
     while( ( R8_UART0_LSR & RB_LSR_TX_FIFO_EMP ) == 0 );                        /* 等待数据发送 */
@@ -241,12 +241,12 @@ int main( void )
     LED_OUT_INIT( );
     LED_OUT_ACT( );                                                             /* 开机后LED亮一下以示工作 */
     Delay_ms( 100 );
-    LED_OUT_INACT( );
+    LED_OUT_INACT();
     Uart0_Init( 115200 );                                                       /*  串口0初始化 */ 
-    for( i = 0; i < 50; i++ )    buf[ i ] = i;
+    for( i = 0; i < 50; i++ )  buf[ i ] = i;
     UART0_SendStr(SEND_STRING );                                                /* 串口0发送字符串 */
     UART0_SendByte(0xAA);                                                       /* 串口0发送1字节 */
-    UART0Send_FIFO( buf, 50 );                                                  /* 启用FIFO，发送50字节数据 */
+    UART0Send_FIFO( buf,50);                                                  /* 启用FIFO，发送50字节数据 */
     while(1){
         RcvNum =Seril0Rcv( rcvbuf );                                            /* 等待接收数据，并通过串口0发送出去 */ 
         Seril0Send( rcvbuf, RcvNum );

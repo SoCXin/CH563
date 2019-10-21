@@ -241,7 +241,7 @@ int main( void )
     LED_OUT_ACT( );                                                             /* 开机后LED亮一下以示工作 */
     Delay_ms( 100 );
     LED_OUT_INACT( );
-    Uart1_Init( 115200 );                                                       /* 串口1初始化 */ 
+    Uart1_Init(115200);                                                       /* 串口1初始化 */ 
     for( i = 0; i < 50; i++ ){
         buf[ i ] = i;
     }
