@@ -190,7 +190,7 @@ void mStopIfNetError(UINT8 iError)
 {
     if (iError == CH563NET_ERR_SUCCESS) return;                                 /* 操作成功 */
 
-    printf("Error: %02X\n", (UINT16)iError);                                    /* 显示错误 */
+    printf("NetError: %02X\n", (UINT16)iError);                                    /* 显示错误 */
  
 }
 
@@ -201,7 +201,7 @@ void mStopIfError( UINT8 iError )
     {    
         return;                                                                 /* 操作成功 */
     }
-    printf( "Error: %02X\n", (UINT16)iError );                                  /* 显示错误 */
+    printf( "USBError: %02X\n", (UINT16)iError );                                  /* 显示错误 */
     
     /* 遇到错误后,应该分析错误码以及CH56xDiskStatus状态,例如调用CH56xDiskConnect查询当前U盘是否连接,如果U盘已断开那么就重新等待U盘插上再操作,
        建议出错后的处理步骤:
