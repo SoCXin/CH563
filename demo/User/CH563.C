@@ -64,10 +64,10 @@ __align(4)UINT8 Mem_ArpTable[CH563NET_RAM_ARP_TABLE_SIZE];
 
 #define RECE_BUF_LEN                          1024                               /* 接收缓冲区的大小 */
 
-/* CH563相关定义 */
-const UINT8 MACAddr[6] = {0x02,0x03,0x04,0x05,0x06,0x07};                       /* CH563MAC地址 */
-const UINT8 IPAddr[4] = {192,168,1,10};                                          /* CH563IP地址 */
-const UINT8 GWIPAddr[4] = {192,168,1,1};                                        /* CH563网关 */
+/* CH563相关定义10,56,6,39 */
+const UINT8 MACAddr[6] = {0x07,0x03,0x04,0x07,0x06,0x07};                       /* CH563MAC地址 */
+const UINT8 IPAddr[4] = {10,56,6,89};                                          /* CH563IP地址 */
+const UINT8 GWIPAddr[4] = {10,56,6,1};                                        /* CH563网关 */
 const UINT8 IPMask[4] = {255,255,255,0};                                        /* CH563子网掩码 */
 
 const UINT8 DESIP[4] = {192,168,1,88};                                         /* 目的IP地址 */
@@ -89,6 +89,7 @@ bit1 1：Socket连接
 bit0 1:PHY连接
 */
 UINT8 G_Flag=0;         //全局flag
+/******************************************************************************/
 
 #define PHY_Connect        0x01
 #define Socket_Connect     0x02
@@ -99,7 +100,7 @@ UINT8 G_Flag=0;         //全局flag
 UINT8 USBStep = 1;
 UINT8 NetStep = 1;
 
-UINT8	AUDIO_FILE_NAME[16] = {"/CESHI.TXT"};
+UINT8	AUDIO_FILE_NAME[16] = {"/qitas.txt"};
 
 UINT8   RecBuf[1024];   //1k的数据缓存区
 UINT16  RecLen = 0;
@@ -222,7 +223,7 @@ UINT8 Flie_Save( UINT8 *pname, UINT32 Num, UINT8 *Data )
 	strcpy( (PCHAR)&mCmdParam.Open.mPathName, (PCCHAR)pname ); 
 	i = CH56xFileOpen( );											            /* 打开文件 */
 #if MY_DEBUG_PRINTF
-	printf( "CH563FileOpen:%x \n", i );
+	printf( "CH563 FileOpen:%x \n", i );
 #endif
 	if( i == ERR_SUCCESS ){	
 	    mCmdParam.Locate.mSectorOffset = 0xFFFFFFFF;
@@ -234,20 +235,20 @@ UINT8 Flie_Save( UINT8 *pname, UINT32 Num, UINT8 *Data )
 	}																	        /* 创建文件 */
 	else return( i );
 #if MY_DEBUG_PRINTF
-	printf( "CH563ByteWrite:%x \n", i );
+	printf( "CH563 ByteWrite:%x \n", i );
 #endif
 	mCmdParam.Write.mSectorCount = 1;
 	mCmdParam.Write.mDataBuffer = Data;
 	i = CH56xFileWrite( );											            /* 写文件 */
 #if MY_DEBUG_PRINTF
-	printf( "CH563Write:%x \n", i );
+	printf( "CH563 Write:%x \n", i );
 #endif
     R32_PB_OUT &= ~(1<<0);  
 	if( i != ERR_SUCCESS )	 return ( i );
 	mCmdParam.Close.mUpdateLen = 1;
 	i = CH56xFileClose( );											            /* 关闭文件，更新文件长度 */
 #if MY_DEBUG_PRINTF
-	printf( "CH563FileClose:%x \n" , i );
+	printf( "CH563 FileClose:%x \n" , i );
 #endif
 	return( i );
 }
@@ -396,15 +397,15 @@ void USBProcess(void)
 	}
 	if(USBStep==2)                            //有优盘接入，端点0初始化
 	{
-		status = USBHOST_EHCI_EP0_Init( &UDisk.Device );                        /* USB主机控制端点0初始化 */
+		status = USBHOST_EHCI_EP0_Init( &UDisk.Device );      /* USB主机控制端点0初始化 */
 		if( status != USB_OPERATE_SUCCESS )  //失败
 		{
-			printf("端点0初始化error \r\n");
+			printf("USB端点0初始化error\r\n");
 			USBStep = 0xff;
 		}
 		else
 		{
-			printf("端点0初始化完成 \r\n");
+			printf("USB端点0初始化ok \r\n");
 			USBStep = 3;
 		}
 	}
@@ -433,7 +434,7 @@ void USBProcess(void)
 		if( CH56xDiskStatus < DISK_CONNECT ) 
         {  
             /* 检测到断开,重新检测并计时 */
-            printf( "Device gone\n" );
+            printf( "USB DISK DISCONNECT\n" );
 			G_Flag &= ~UdiskConnect;
             USBStep = 1;                                                          /* 重新等待 */
         }
@@ -466,7 +467,7 @@ void USBProcess(void)
 	}
 	if(USBStep==0xff)   //未知设备
 	{
-		printf("UnknownUsbDevice\r\n");
+		printf("Unknown Usb Device\r\n");
 		G_Flag &= ~UdiskConnect;
         /* 重新初始化U盘相关参数并回收资源 */
         USBHOST_DevicePara_Init( &UDisk.Device );                               /* USB主机相关参数初始化 */
@@ -485,19 +486,19 @@ void NetProcess(void)
 		i = CH563NET_GetPHYStatus(); 
 		if(i&PHY_DISCONN)
 		{
-			
+			//printf("ETH PHY disconnect \r\n");
 		}
 		else
 		{
 			G_Flag |= PHY_Connect;
 			NetStep = 2;
-			printf("PHY  connect \r\n");
+			printf("ETH PHY connect \r\n");
 		}
 	}
 	if(NetStep==2)  //创建Socket
 	{
 		CH563NET_CreatTcpSocket();
-		printf("Socket0 OK  \r\n");
+		printf("Create Socket0 OK\r\n");
 		NetStep = 3;
 	}
 	if(NetStep==3)
@@ -506,7 +507,7 @@ void NetProcess(void)
 		{
 			printf("U盘连接，Socket开始连接 \r\n");
 			i = CH563NET_SocketConnect(SocketId);                                        /* TCP连接 */
-			mStopIfNetError(i);                                                             /* 检查错误 */  
+			mStopIfNetError(i);                                                          /* 检查错误 */  
 			NetStep = 4;
 		}
 	}
@@ -514,11 +515,11 @@ void NetProcess(void)
 	{
 		if(G_Flag&Socket_Connect) 
 		{
-			printf("Socket connect \r\n");
+			printf("qitas: Socket connect \r\n");
 			NetStep = 5;
 		}
 	}
-	if(NetStep==5)      //判断网络连接，和数据。
+	if(NetStep==5)   //判断网络连接，和数据。
 	{
 		if((G_Flag&Socket_Connect)==0)  //Socket断开
 		{
