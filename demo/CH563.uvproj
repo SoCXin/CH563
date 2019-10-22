@@ -427,14 +427,14 @@
               <FilePath>.\User\CH563.C</FilePath>
             </File>
             <File>
+              <FileName>UDISK.C</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\UDISK.C</FilePath>
+            </File>
+            <File>
               <FileName>Udisk_FAT.C</FileName>
               <FileType>1</FileType>
               <FilePath>.\User\Udisk_FAT.C</FilePath>
-            </File>
-            <File>
-              <FileName>CH56XUFI_KIL31.LIB</FileName>
-              <FileType>4</FileType>
-              <FilePath>.\User\CH56XUFI_KIL31.LIB</FilePath>
             </File>
             <File>
               <FileName>EHCI_HCD.C</FileName>
@@ -442,14 +442,14 @@
               <FilePath>.\PUB\EHCI_HCD.C</FilePath>
             </File>
             <File>
-              <FileName>UDISK.C</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\User\UDISK.C</FilePath>
-            </File>
-            <File>
               <FileName>CH563NET.lib</FileName>
               <FileType>4</FileType>
               <FilePath>.\PUB\CH563NET.lib</FilePath>
+            </File>
+            <File>
+              <FileName>CH56XUFI_KIL41.LIB</FileName>
+              <FileType>4</FileType>
+              <FilePath>.\User\CH56XUFI_KIL41.LIB</FilePath>
             </File>
           </Files>
         </Group>

@@ -134,6 +134,12 @@ __irq void FIQ_Handler( void )
     while( 1 );
 }
 
+int fputc( int c, FILE *f )
+{
+    R8_UART1_THR = c;                                                           /* 发送数据 */
+    while( ( R8_UART1_LSR & RB_LSR_TX_FIFO_EMP ) == 0 );                        /* 等待数据发送 */
+    return( c );
+}
 /****************  串口初始化  *******************/
 void mInitSTDIO( void )
 {
@@ -158,12 +164,7 @@ void mInitSTDIO( void )
 }
 
 
-int fputc( int c, FILE *f )
-{
-    R8_UART1_THR = c;                                                           /* 发送数据 */
-    while( ( R8_UART1_LSR & RB_LSR_TX_FIFO_EMP ) == 0 );                        /* 等待数据发送 */
-    return( c );
-}
+
 
 /****************  定时器初始化  ****************/
 void SysTimeInit(void)
@@ -557,7 +558,7 @@ void WriteFile(void)
 * Output         : None
 * Return         : None
 *******************************************************************************/
-int    main( void ) 
+int  main( void ) 
 {
 //    UINT8  status;
     UINT8  i;
