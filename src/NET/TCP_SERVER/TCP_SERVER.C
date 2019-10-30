@@ -62,8 +62,10 @@ __align(4)UINT8 Mem_ArpTable[CH563NET_RAM_ARP_TABLE_SIZE];
 
 /* CH563相关定义 */
 UINT8 MACAddr[6] = {0x02,0x03,0x04,0x05,0x06,0x07};                             /* CH563MAC地址 */
-const UINT8 IPAddr[4] = {192,168,1,2};                                          /* CH563IP地址 */
-const UINT8 GWIPAddr[4] = {192,168,1,1};                                        /* CH563网关 */
+const UINT8 IPAddr[4] = {10,56,6,75};							/* CH563IP地址 */
+const UINT8 GWIPAddr[4] = {10,56,6,254};							/* CH563网关 */
+//const UINT8 IPAddr[4] = {192,168,1,2};                                          /* CH563IP地址 */
+//const UINT8 GWIPAddr[4] = {192,168,1,1};                                        /* CH563网关 */
 const UINT8 IPMask[4] = {255,255,255,0};                                        /* CH563子网掩码 */
 UINT8 SocketId;                                                                 /* 保存socket索引，可以不用定义 */
 UINT8 SocketRecvBuf[CH563NET_MAX_SOCKET_NUM][RECE_BUF_LEN];                     /* socket接收缓冲区 */
@@ -378,7 +380,7 @@ int main( void )
     i = CH563NET_LibInit(IPAddr,GWIPAddr,IPMask,MACAddr);                       /* 库初始化 */
     mStopIfError(i);                                                            /* 检查错误 */
 #if CH563NET_DBG
-    printf("CH563NETLibInit Success\n");
+    printf(" CH563NETLibInit Success\n");
 #endif    
     SysTimeInit();                                                              /* 系统定时器初始化 */
     InitSysHal();                                                               /* 初始化中断 */
