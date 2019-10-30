@@ -68,19 +68,19 @@ __align(4)UINT8 Mem_ArpTable[CH563NET_RAM_ARP_TABLE_SIZE];
 
 
 
-/*使用前需要设置对应服务器平台的帐号和密码*/
+/*使用前需要设置对应服务器平台的帐号和密码*/ //10.56.6.92
 UINT8 MACAddr[6] = {0x84,0xc2,0xe4,0x05,0x06,0x17};			/* CH563MAC地址 */
-UINT8 IPAddr[4] = {192,168,10,75};							/* CH563IP地址 */
-UINT8 GWIPAddr[4] = {192,168,10,1};							/* CH563网关 */
+UINT8 IPAddr[4] = {10,56,6,75};							/* CH563IP地址 */
+UINT8 GWIPAddr[4] = {10,56,6,254};							/* CH563网关 */
 UINT8 IPMask[4] = {255,255,255,0};							/* CH563子网掩码 */
 UINT16 aport=1000;											/* CH563源端口 */
 
 UINT16 DESPORT= 1883;										/* MQTT服务器端口 */
-UINT8 DESIP[4] = {163,177,150,12};							/* MQTT服务器IP地址 */
-char *username = "test1/device1";							/* 设备名，每个设备唯一，可用”/“做分级 */
-char *password = "password";								/* 服务器登陆密码 */
-char *sub_topic = "topic1";									/* 订阅的会话名，为了自发自收，应与发布的会话名相同 */
-char *pub_topic = "topic1";									/* 发布的会话名 */
+UINT8 DESIP[4] = {182,61,61,133};							/* MQTT服务器IP地址 */
+char *username = "jian";								/* 设备名，每个设备唯一，可用”/“做分级 */
+char *password = "133699";								/* 服务器登陆密码 */
+char *sub_topic = "/jian/sw/status";									/* 订阅的会话名，为了自发自收，应与发布的会话名相同 */
+char *pub_topic = "/jian/device/status";									/* 发布的会话名 */
 
 
 /* CH563相关定义 */
@@ -229,8 +229,8 @@ void MQTT_Connect(char *username,char *password)
 	UINT32 len;
 	UINT8 buf[200];
 
-	data.clientID.cstring = "11";
-	data.keepAliveInterval = 20;
+	data.clientID.cstring = "CH563";
+	data.keepAliveInterval = 30;
 	data.cleansession = 1;
 	data.username.cstring = username;																		
 	data.password.cstring = password;
@@ -614,16 +614,16 @@ int main(void)
 {
 	UINT32 i = 0;
 	UINT16 TimeDelay=0;
-	char payload[500];
+	char payload[500]="test mqtt info";
 	
-	for(i=0;i<500;i++)
-	payload[i]='a';
-
+	// for(i=0;i<500;i++)payload[i]='q';
+    
 	mInitSTDIO( );															/* 为了让计算机通过串口监控演示过程 */
 	i = CH563NET_LibInit(IPAddr,GWIPAddr,IPMask,MACAddr);					/* 库初始化 */
 	mStopIfError(i);														/* 检查错误 */
+
 #if CH563NET_DBG
-	printf("CH563NETLibInit Success\n");
+	printf(" CH563NETLibInit Success\n");
 #endif		
 	SysTimeInit();															/* 系统定时器初始化 */
 	InitSysHal();															/* 初始化中断 */
@@ -635,7 +635,8 @@ int main(void)
 		if (CH563NET_QueryGlobalInt()) CH563NET_HandleGlobalInt();			/* 查询中断，如果有中断，则调用全局中断处理函数 */
 		Delay_ms(1);
 		TimeDelay++;
-		if (TimeDelay>500) {
+		if (TimeDelay>1000) 
+		{
 			TimeDelay=0;
 			if(con_flag) MQTT_Publish(pub_topic,payload);
 		}

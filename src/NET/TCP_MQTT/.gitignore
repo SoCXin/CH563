@@ -1,6 +1,5 @@
 list/
 obj/
-.pio/
 .vscode/
 *.bin
 *.uvgu*
