@@ -1,0 +1,7 @@
+{
+    "name":"CH563",
+    "Core":"8051",
+    "description":"ARM9 CH563 MCU",
+    "url":"https://github.com/SoCXin/CH563",
+    "version":"1.0.0"
+}
