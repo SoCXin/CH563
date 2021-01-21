@@ -8,7 +8,7 @@
 
 ### [简介](https://github.com/SoCXin/CH563/wiki)
 
-[CH563](https://github.com/SoCXin/CH563) 是一款32位100MHz ARM9内核MCU，默认系统主频为100MHZ，最高可达130MHZ，224K FLASH、28K DATA FLASH、64K SRAM。
+[CH563](https://github.com/SoCXin/CH563) 是一款ARM9内核MCU，默认系统主频为100MHZ，最高可达130MHZ，224K FLASH、28K DATA FLASH、64K SRAM。
 
 内置100M以太网MAC和PHY，支持10/100M全双工半双工，自动协商，线路自动转换等功能，高度集成的外设以及高性能，可以直接和网络终端如PC，嵌入式设备进行数据交互。
 
