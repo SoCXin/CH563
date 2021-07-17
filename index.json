@@ -1,65 +1,33 @@
 {
     "type":"SoC",
     "name":"CH563",
-    "series":["CH563"],
-    "price":[4,6],
-    "description":"WCH ARM9 SoC",
-    "peripheral": ["TIM","ADC","USB","UART","SPI","LDO","PWM"],
-    "package":["LQFP64","LQFP48","QFN48"],
-    "manufacturer": {
-        "vendor":"WCH",
-        "homepage": "http://www.wch.cn/products/CH554.html"
-    },
-    "url":"http://www.SoC.xin/CH32F103",
-    "repo":"https://github.com/SoCXin/CH32F103",
-    "version":"1.5.0",
+    "title": "WCH SoC CH563",
+    "description":"WCH ARM CH563 SoC",
+    "version":"1.0.0",
+    "price":[4,8],
     "Core": {
         "num": 1,
-        "architecture":"ARM9",
-        "Freq":[8,24]
+        "type":"ARM",
+        "Freq": 100,
+        "DMIPS": 100,
+        "CoreMark": 160
     },
-    "UART": {
-        "mark": ["UART1","UART2"],
-        "BIT":[5,6,7,8,9],
-        "ISO7816":true,
-        "IrDA":true,
-        "LIN":true,
-        "FIFO": 16,
-        "BPS": [48,3000000]
+    "manufacturer": {
+        "vendor":"WCH",
+        "homepage": "http://www.wch.cn/products/CH563.html"
     },
-    "TIM": {
-        "resolution":[16,16,16],
-        "rate": 1024
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SoCXin/CH563.git"
     },
-    "CLK": {
-        "HSI": [24000],
-        "LSI": [32],
-        "PLL": [16000,96000],
-        "DIV": [1,128],
-        "SYS": [187,24000],
-        "accuracy": 0.02
-    },
-    "ADC": {
-        "num": 1,
-        "channel": 4,
-        "resolution": 8,
-        "rate": 2400
-    },
-    "USB": {
-        "num": 1,
-        "FIFO": 64,
-        "more":["FS","type-C","Host","Device"]
-    },
+    "series":["CH563","CH561"],
+    "package":["LQFP64M","LQFP128"],
+    "peripheral": ["TIM","ADC","USB","UART","SPI","LDO","PWM"],
     "PWR": {
         "VDD": [2800,5000],
         "Ivdd": 3.5,
         "LDO": [5000,3300],
         "rate": 1024
-    },
-    "PWM": {
-        "num": 2,
-        "resolution": 8,
-        "rate": 256
     },
     "EMC": {
         "EFT": 2000,
@@ -67,7 +35,16 @@
     },
     "upload": {
         "ISP": true,
+        "IAP": true,
         "SWD": true,
         "speed": 115200
-    }
+    },
+    "keywords": [
+        "dev-platform",
+        "ARM",
+        "WCH",
+        "CH563",
+        "ETH","SDIO","ARM9","I2C","RTC","SPI",
+        "3.6V","1.8V"
+    ]
 }

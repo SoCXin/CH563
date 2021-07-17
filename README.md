@@ -3,7 +3,7 @@
 [![sites](http://182.61.61.133/link/resources/SoC.png)](http://www.SoC.Xin)
 
 * [WCH](http://www.wch.cn/)：[ARM9](https://github.com/SoCXin/Cortex)
-* [L2R2](https://github.com/SoCXin/Level)：100 MHz
+* [L4R4](https://github.com/SoCXin/Level)：100 MHz
 
 ## [简介](https://github.com/SoCXin/CH563/wiki)
 
